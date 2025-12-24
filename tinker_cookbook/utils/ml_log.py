@@ -207,6 +207,7 @@ class WandbLogger(Logger):
         config: Any | None = None,
         log_dir: str | Path | None = None,
         wandb_name: str | None = None,
+        wandb_entity: str | None = None,
     ):
         if not _wandb_available:
             raise ImportError(
@@ -224,12 +225,14 @@ class WandbLogger(Logger):
             config=dump_config(config) if config else None,
             dir=str(log_dir) if log_dir else None,
             name=wandb_name,
+            entity=wandb_entity,
+            reinit=True,  # Allow reinitialization for parallel runs
         )
 
     def log_hparams(self, config: Any) -> None:
         """Log hyperparameters to wandb."""
         if self.run and wandb is not None:
-            wandb.config.update(dump_config(config))
+            wandb.config.update(dump_config(config), allow_val_change=True)
 
     def log_metrics(self, metrics: Dict[str, Any], step: int | None = None) -> None:
         """Log metrics to wandb."""
@@ -385,6 +388,7 @@ def setup_logging(
     log_dir: str,
     wandb_project: str | None = None,
     wandb_name: str | None = None,
+    wandb_entity: str | None = None,
     config: Any | None = None,
     do_configure_logging_module: bool = True,
 ) -> Logger:
@@ -395,6 +399,7 @@ def setup_logging(
         log_dir: Directory for logs
         wandb_project: W&B project name (if None, W&B logging is skipped)
         wandb_name: W&B run name
+        wandb_entity: W&B entity (username or team name)
         config: Configuration object to log
         do_configure_logging_module: Whether to configure the logging module
 
@@ -427,6 +432,7 @@ def setup_logging(
                     config=config,
                     log_dir=log_dir_path,
                     wandb_name=wandb_name,
+                    wandb_entity=wandb_entity,
                 )
             )
 

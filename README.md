@@ -5,15 +5,94 @@
 
 We provide two libraries for the broader community to customize their language models: `tinker` and `tinker-cookbook`.
 
-- `tinker` is a training SDK for researchers and developers to fine-tune language models. You send API requests to us and we handle the complexities of distributed training.
-- `tinker-cookbook` includes realistic examples of fine-tuning language models. It builds on the Tinker API and provides common abstractions to fine-tune language models.
+## Quick Start (Rohan edits): Running Modular SFT Training
+
+The `modular_sft_test.py` script provides a convenient way to train multiple models on the same dataset with consistent hyperparameters. Here's how to use it:
+
+### Prerequisites
+
+1. **API Keys**: Set up your environment variables (add to `~/.zshrc` or `~/.bashrc`):
+   ```bash
+   export TINKER_API_KEY="your-tinker-api-key"
+   export WANDB_API_KEY="your-wandb-api-key"
+   export WANDB_ENTITY="your-wandb-username"  # Optional: defaults to team account if not set
+   ```
+
+2. **Installation**: 
+   - Install `uv` if you haven't already: `curl -LsSf https://astral.sh/uv/install.sh | sh`
+   - Install dependencies: `uv sync` (this creates a virtual environment and installs all dependencies)
+   - The project uses `uv` for dependency management - see the Installation section below for more details
+
+### Running the Script
+
+1. **Configure your training**: Edit the configuration section at the top of `modular_sft_test.py`:
+   - `TRAINING_CONFIGS`: List of model-dataset pairs to train
+   - `WANDB_PROJECT`: Your wandb project name
+   - `WANDB_ENTITY`: Loaded from `WANDB_ENTITY` environment variable (set in your shell config)
+   - Other hyperparameters: learning rate, batch size, epochs, etc.
+
+2. **Run the script**:
+   ```bash
+   uv run python modular_sft_test.py
+   ```
+   
+   **Note**: We use `uv run` instead of `python` directly. This ensures the script runs with the correct virtual environment and dependencies. `uv run` automatically activates the project's virtual environment and runs the command with the right Python version and packages.
+
+The script will:
+- Train each model configuration sequentially
+- Save checkpoints and logs to `experiments/` directory
+- Run model comparisons on test sets after training
+- Log metrics to wandb (if configured)
+
+### Customization
+
+- Set `RUN_TRAINING = False` to skip training and only run evaluation
+- Set `RUN_EVAL = False` to skip evaluation
+- Modify `TRAINING_CONFIGS` to add/remove model configurations
+- Adjust hyperparameters in the configuration section
 
 ## Installation
 
 1. Sign up for Tinker [here](https://auth.thinkingmachines.ai/sign-up).
 2. Once you have access, create an API key from the [console](https://tinker-console.thinkingmachines.ai) and export it as environment variable `TINKER_API_KEY`.
-3. Install tinker python client via `pip install tinker`
-4. We recommend installing `tinker-cookbook` in a virtual env either with `conda` or `uv`. For running most examples, you can install via `pip install -e .`.
+3. **Install `uv`** (recommended): 
+   ```bash
+   curl -LsSf https://astral.sh/uv/install.sh | sh
+   ```
+   `uv` is a fast Python package installer and resolver written in Rust. It manages virtual environments and dependencies automatically.
+
+4. **Install dependencies with `uv`**:
+   ```bash
+   uv sync
+   ```
+   This command:
+   - Creates a virtual environment (if it doesn't exist)
+   - Installs all dependencies from `pyproject.toml` and `uv.lock`
+   - Ensures reproducible builds with locked dependency versions
+
+5. **Alternative: Install with pip** (if you prefer not to use `uv`):
+   ```bash
+   pip install tinker
+   pip install -e .
+   ```
+
+### Using `uv` for Running Scripts
+
+This project uses `uv` for dependency management. When running scripts, use `uv run` instead of `python` directly:
+
+```bash
+# Instead of: python script.py
+uv run python script.py
+
+# Or activate the environment manually:
+source .venv/bin/activate  # uv creates .venv by default
+python script.py
+```
+
+`uv run` automatically:
+- Activates the project's virtual environment
+- Uses the correct Python version
+- Ensures all dependencies are available
 
 ## Tinker
 

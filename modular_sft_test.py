@@ -1,13 +1,14 @@
 """Modular SFT training script - set training configs at the top."""
 
 import asyncio
+import os
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
 
 import chz
 
-from test_sft_simple import LimitedConversationFileBuilder, run_model_comparison
+from sft_utils import LimitedConversationFileBuilder, run_model_comparison
 from tinker_cookbook import cli_utils, model_info
 from tinker_cookbook.renderers import TrainOnWhat
 from tinker_cookbook.supervised import train
@@ -45,6 +46,8 @@ SAVE_EVERY = 5 # This is a number of batches
 EVAL_EVERY = 3 # This is a number of batches
 WANDB_PROJECT = "tinkering-with-tinker"
 WANDB_NAME = None
+# Load wandb entity from environment variable, fallback to None (uses default/team account)
+WANDB_ENTITY = os.environ.get("WANDB_ENTITY", None)
 RUN_TRAINING = True
 RUN_EVAL = True
 
@@ -77,6 +80,7 @@ def build_config(model_name: str, dataset_file: Path, log_path: str, train_size:
         "eval_every": EVAL_EVERY,
         "wandb_project": WANDB_PROJECT,
         "wandb_name": WANDB_NAME,
+        "wandb_entity": WANDB_ENTITY,
         "adam_beta1": 0.9,
         "adam_beta2": 0.95,
         "adam_eps": 1e-8,

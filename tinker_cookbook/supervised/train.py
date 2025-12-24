@@ -73,6 +73,7 @@ class Config:
     # Logging parameters
     wandb_project: str | None = None
     wandb_name: str | None = None
+    wandb_entity: str | None = None
 
     enable_trace: bool = False
 
@@ -173,6 +174,7 @@ async def main(config: Config):
         log_dir=config.log_path,
         wandb_project=config.wandb_project,
         wandb_name=config.wandb_name,
+        wandb_entity=config.wandb_entity,
         config=config,
         do_configure_logging_module=True,
     )
