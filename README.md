@@ -7,7 +7,7 @@ We provide two libraries for the broader community to customize their language m
 
 ## Quick Start (Rohan edits): Running Modular SFT Training
 
-The `modular_sft_test.py` script provides a convenient way to train multiple models on the same dataset with consistent hyperparameters. Here's how to use it:
+The `modular_sft_test.py` script provides a convenient way to train multiple models and set training datasets and hyperparameters. Here's how to use it:
 
 ### Prerequisites
 
