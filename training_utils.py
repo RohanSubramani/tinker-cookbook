@@ -1,4 +1,4 @@
-"""Utility functions and classes for SFT training and evaluation."""
+"""Utility functions and classes for SFT and RL training and evaluation."""
 
 import json
 import os
@@ -23,6 +23,12 @@ from tinker_cookbook.supervised.types import (
     SupervisedDataset,
 )
 from tinker_cookbook.tokenizer_utils import get_tokenizer
+from tinker_cookbook.rl.types import RLDatasetBuilder, RLDataset, EnvGroupBuilder
+from tinker_cookbook.rl.metric_util import RLTestSetEvaluator, dataset_to_env_group_builders
+from tinker_cookbook.rl.train import Config as RLConfig
+from tinker_cookbook.rl.rollouts import do_group_rollout
+from tinker_cookbook.rl.problem_env import ProblemEnv
+from tinker_cookbook.completers import TinkerTokenCompleter
 
 
 @chz.chz
@@ -347,4 +353,240 @@ async def run_model_comparison(
     )
     
     await evaluator(fine_tuned_client)
+
+
+@chz.chz
+class LimitedRLDatasetBuilder(RLDatasetBuilder):
+    """Wrapper that limits the number of training problems in an RL dataset.
+    
+    This wrapper limits the underlying dataset to max_problems before creating batches.
+    For example, if max_problems=100 and batch_size=20, you'll get 5 batches.
+    """
+    base_builder: RLDatasetBuilder
+    max_problems: int | None = None  # Maximum number of problems to train on (None = use all)
+    
+    async def __call__(self) -> tuple[RLDataset, RLDataset | None]:
+        train_dataset, test_dataset = await self.base_builder()
+        
+        if self.max_problems is not None:
+            # Calculate how many batches we need for max_problems
+            # batch_size is the number of problems per batch
+            batch_size = train_dataset.batch_size if hasattr(train_dataset, 'batch_size') else 1
+            max_batches = (self.max_problems + batch_size - 1) // batch_size
+            
+            class LimitedDataset(RLDataset):
+                """Wrapper that limits the number of batches returned by the dataset."""
+                def __init__(self, base_dataset: RLDataset, max_batches: int):
+                    self.base_dataset = base_dataset
+                    self.max_batches = max_batches
+                    # Preserve batch_size attribute if it exists
+                    if hasattr(base_dataset, 'batch_size'):
+                        self.batch_size = base_dataset.batch_size
+                
+                def get_batch(self, index: int):
+                    if index >= self.max_batches:
+                        raise IndexError(f"Batch index {index} >= max_batches {self.max_batches}")
+                    return self.base_dataset.get_batch(index)
+                
+                def __len__(self):
+                    return min(self.max_batches, len(self.base_dataset))
+            
+            train_dataset = LimitedDataset(train_dataset, max_batches)
+        
+        return train_dataset, test_dataset
+
+
+async def run_rl_evaluation(
+    config: RLConfig,
+    test_dataset: RLDataset | None,
+    model_name: str,
+    dataset_name: str | None = None,
+):
+    """Run RL evaluation on test set and save prompts/responses from both models.
+    
+    Similar to run_model_comparison but for RL - evaluates on test problems,
+    saves metrics, and saves side-by-side comparison of base vs fine-tuned responses.
+    """
+    print("\n" + "="*80)
+    print("Running RL evaluation on test set...")
+    print("="*80 + "\n")
+    
+    if test_dataset is None:
+        print("Warning: No test dataset available. Skipping evaluation.")
+        return
+    
+    # Get the final checkpoint path
+    checkpoint_info = checkpoint_utils.get_last_checkpoint(config.log_path, required_key="sampler_path")
+    if not checkpoint_info:
+        print("Warning: No checkpoint with sampler_path found. Skipping evaluation.")
+        return
+    
+    model_path = checkpoint_info.get("sampler_path")
+    if not model_path:
+        print("Warning: Could not find sampler_path. Skipping evaluation.")
+        return
+    
+    # Create service client and get both models
+    service_client = tinker.ServiceClient(base_url=config.base_url)
+    base_client = service_client.create_sampling_client(base_model=model_name)
+    fine_tuned_client = service_client.create_sampling_client(
+        model_path=model_path,
+        base_model=model_name,
+    )
+    
+    # Get renderer for parsing responses
+    renderer_name = model_info.get_recommended_renderer_name(model_name)
+    tokenizer = get_tokenizer(model_name)
+    renderer = renderers.get_renderer(renderer_name, tokenizer)
+    
+    # Get all env group builders from test dataset
+    env_group_builders = dataset_to_env_group_builders(test_dataset)
+    
+    # Create policies
+    base_policy = TinkerTokenCompleter(base_client, max_tokens=config.max_tokens)
+    fine_tuned_policy = TinkerTokenCompleter(fine_tuned_client, max_tokens=config.max_tokens)
+    
+    # Run rollouts for both models
+    print(f"Evaluating on {len(env_group_builders)} problems...")
+    comparisons = []
+    
+    for idx, builder in enumerate(env_group_builders):
+        # Get the problem/question by creating an env
+        envs = await builder.make_envs()
+        if not envs or not isinstance(envs[0], ProblemEnv):
+            continue
+        problem_env = envs[0]
+        question = problem_env.get_question()
+        reference_answer = problem_env.get_reference_answer()
+        
+        # Run rollouts
+        base_traj_group = await do_group_rollout(builder, base_policy)
+        fine_tuned_traj_group = await do_group_rollout(builder, fine_tuned_policy)
+        
+        # Extract responses (take first trajectory from each group)
+        base_response = ""
+        base_reward = 0.0
+        if base_traj_group.trajectories_G:
+            base_traj = base_traj_group.trajectories_G[0]
+            if base_traj.transitions:
+                base_tokens = base_traj.transitions[0].ac.tokens
+                parsed = renderer.parse_response(base_tokens)
+                base_response = renderers.ensure_text(parsed[0]["content"]) if parsed else ""
+                base_reward = base_traj_group.get_total_rewards()[0]
+        
+        fine_tuned_response = ""
+        fine_tuned_reward = 0.0
+        if fine_tuned_traj_group.trajectories_G:
+            fine_tuned_traj = fine_tuned_traj_group.trajectories_G[0]
+            if fine_tuned_traj.transitions:
+                fine_tuned_tokens = fine_tuned_traj.transitions[0].ac.tokens
+                parsed = renderer.parse_response(fine_tuned_tokens)
+                fine_tuned_response = renderers.ensure_text(parsed[0]["content"]) if parsed else ""
+                fine_tuned_reward = fine_tuned_traj_group.get_total_rewards()[0]
+        
+        comparisons.append({
+            "example_id": idx + 1,
+            "question": question,
+            "reference_answer": reference_answer,
+            "base_model": base_response,
+            "base_reward": base_reward,
+            "fine_tuned_model": fine_tuned_response,
+            "fine_tuned_reward": fine_tuned_reward,
+        })
+    
+    # Compute metrics
+    evaluator = RLTestSetEvaluator(
+        dataset=test_dataset,
+        max_tokens=config.max_tokens,
+        name="test",
+        num_groups_to_log=0,  # Don't log during metric computation
+    )
+    metrics = await evaluator(fine_tuned_client)
+    
+    # Save comparison file
+    output_file = os.path.join(config.log_path, "model_comparison.txt")
+    _write_rl_comparison_file(comparisons, metrics, output_file, model_name, dataset_name)
+    
+    print(f"\n{'='*80}")
+    print(f"Model comparison written to: {output_file}")
+    print(f"\nKey Metrics:")
+    for key in ["test/reward/total", "test/env/all/reward/total"]:
+        if key in metrics:
+            print(f"  {key}: {metrics[key]:.4f}")
+    print(f"{'='*80}\n")
+
+
+def _write_rl_comparison_file(
+    comparisons: list[dict],
+    metrics: dict[str, float],
+    output_file: str,
+    model_name: str,
+    dataset_name: str | None,
+):
+    """Write side-by-side comparison to file."""
+    os.makedirs(os.path.dirname(output_file), exist_ok=True)
+    
+    with open(output_file, "w", encoding="utf-8") as f:
+        f.write("=" * 120 + "\n")
+        f.write("RL MODEL COMPARISON: Base Model vs Fine-Tuned Model\n")
+        f.write("=" * 120 + "\n")
+        f.write(f"Model: {model_name}\n")
+        if dataset_name:
+            f.write(f"Dataset: {dataset_name}\n")
+        f.write(f"Number of Evaluation Problems: {len(comparisons)}\n")
+        f.write("=" * 120 + "\n\n")
+        
+        # Write metrics summary
+        f.write("METRICS SUMMARY:\n")
+        f.write("-" * 120 + "\n")
+        for key in ["test/reward/total", "test/env/all/reward/total"]:
+            if key in metrics:
+                f.write(f"{key}: {metrics[key]:.4f}\n")
+        f.write("\n" + "=" * 120 + "\n\n")
+        
+        # Write each comparison
+        for comp in comparisons:
+            f.write(f"\n{'='*120}\n")
+            f.write(f"EXAMPLE {comp['example_id']}\n")
+            f.write(f"{'='*120}\n\n")
+            
+            # Question
+            f.write("PROBLEM:\n")
+            f.write("-" * 120 + "\n")
+            f.write(comp["question"])
+            f.write("\n\n")
+            
+            # Reference answer
+            if comp["reference_answer"]:
+                f.write("REFERENCE ANSWER:\n")
+                f.write("-" * 120 + "\n")
+                f.write(comp["reference_answer"])
+                f.write("\n\n")
+            
+            # Side-by-side comparison
+            f.write("RESPONSES:\n")
+            f.write("-" * 120 + "\n")
+            f.write(f"{'BASE MODEL (reward: ' + str(comp['base_reward']) + ')':<60} | {'FINE-TUNED MODEL (reward: ' + str(comp['fine_tuned_reward']) + ')':<60}\n")
+            f.write("-" * 120 + "\n")
+            
+            # Split into lines for better formatting
+            base_lines = comp["base_model"].split("\n")
+            fine_tuned_lines = comp["fine_tuned_model"].split("\n")
+            max_lines = max(len(base_lines), len(fine_tuned_lines))
+            
+            for i in range(max_lines):
+                base_line = base_lines[i] if i < len(base_lines) else ""
+                fine_tuned_line = fine_tuned_lines[i] if i < len(fine_tuned_lines) else ""
+                
+                # Truncate if too long
+                base_line = base_line[:58] if len(base_line) > 58 else base_line
+                fine_tuned_line = fine_tuned_line[:58] if len(fine_tuned_line) > 58 else fine_tuned_line
+                
+                f.write(f"{base_line:<60} | {fine_tuned_line:<60}\n")
+            
+            f.write("\n")
+        
+        f.write("\n" + "=" * 120 + "\n")
+        f.write("END OF COMPARISON\n")
+        f.write("=" * 120 + "\n")
 

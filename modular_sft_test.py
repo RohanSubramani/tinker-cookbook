@@ -8,7 +8,7 @@ from pathlib import Path
 
 import chz
 
-from sft_utils import LimitedConversationFileBuilder, run_model_comparison
+from training_utils import LimitedConversationFileBuilder, run_model_comparison
 from tinker_cookbook import cli_utils, model_info
 from tinker_cookbook.renderers import TrainOnWhat
 from tinker_cookbook.supervised import train
