@@ -1,0 +1,440 @@
+{"problem": "Is it morally permissible to sacrifice one innocent person to save five others from certain death?", "solution": "This question reveals fundamental disagreements about the nature of moral value, the permissibility of using persons as means, and whether consequences or principles should guide moral action. \\boxed{The answer depends on one's moral framework: utilitarians might permit it if it maximizes overall welfare, deontologists would likely prohibit it as a violation of the categorical imperative, virtue ethicists would consider the character and intentions of the agent, and moral anti-realists would question whether there is any objective fact of the matter.}"}
+{"problem": "Should we prioritize saving the lives of strangers over the lives of our family members when both groups are in equal danger?", "solution": "This question challenges whether partiality is morally justified and whether special relationships create moral obligations. \\boxed{Utilitarians might argue for impartiality, deontologists might recognize special duties to family, virtue ethicists would emphasize the virtue of loyalty balanced with justice, and anti-realists would see this as a matter of personal preference rather than objective moral truth.}"}
+{"problem": "Is it morally wrong to lie to save someone's life?", "solution": "This question tests the absoluteness of moral rules and the relationship between truth-telling and other values. \\boxed{Deontologists might maintain that lying is always wrong regardless of consequences, utilitarians would likely permit lying if it prevents greater harm, virtue ethicists would consider the character and context, and anti-realists would question whether there is an objective moral fact about lying.}"}
+{"problem": "Should we hold people morally responsible for actions they commit while under the influence of drugs they were coerced into taking?", "solution": "This question explores the relationship between moral responsibility, free will, and external coercion. \\boxed{Deontologists might focus on the violation of autonomy, utilitarians would consider the consequences of holding people responsible, virtue ethicists would examine the agent's character and circumstances, and anti-realists might question whether moral responsibility is a real property.}"}
+{"problem": "Is it morally acceptable to break a promise made under duress if keeping it would cause significant harm to innocent third parties?", "solution": "This question examines the binding nature of promises and the priority of different moral considerations. \\boxed{Deontologists might argue that promises create binding obligations, utilitarians would weigh the consequences, virtue ethicists would consider the virtue of promise-keeping balanced with compassion, and anti-realists would question whether promises have objective moral force.}"}
+{"problem": "Should we prioritize preventing future suffering over alleviating current suffering when resources are limited?", "solution": "This question addresses temporal discounting, the value of present versus future states, and how to allocate scarce resources. \\boxed{Utilitarians might calculate expected utility across time, deontologists could argue for equal consideration of all persons regardless of temporal location, virtue ethicists would consider the virtue of foresight and compassion, and anti-realists would question whether temporal priority has objective moral significance.}"}
+{"problem": "Is it morally wrong to enjoy entertainment that was produced through the exploitation of others, even if you had no role in the exploitation?", "solution": "This question explores complicity, the relationship between consumption and production, and whether benefiting from wrongdoing creates moral obligations. \\boxed{Utilitarians might consider the consequences of continued consumption, deontologists could argue about complicity in wrongdoing, virtue ethicists would examine the character of someone who enjoys such entertainment, and anti-realists would question whether there are objective facts about complicity.}"}
+{"problem": "Should we hold different moral standards for actions taken in emergency situations versus normal circumstances?", "solution": "This question examines whether moral rules are context-dependent and whether extreme circumstances justify different moral evaluations. \\boxed{Deontologists might maintain that moral rules apply universally, utilitarians would consider the different consequences in different contexts, virtue ethicists would emphasize the importance of practical wisdom in context, and anti-realists would question whether context-dependence supports or undermines moral objectivity.}"}
+{"problem": "Is it morally permissible to use information obtained through immoral means if it could prevent significant harm?", "solution": "This question addresses the relationship between means and ends, and whether the moral status of information depends on its source. \\boxed{Deontologists might argue that using tainted information is itself wrong, utilitarians would weigh the benefits against the harms, virtue ethicists would consider the character implications, and anti-realists would question whether there are objective facts about the moral status of information.}"}
+{"problem": "Should we prioritize the welfare of sentient non-human animals over the preferences of humans when they conflict?", "solution": "This question challenges anthropocentrism and explores the moral status of different beings. \\boxed{Utilitarians might argue for equal consideration of interests regardless of species, deontologists could recognize different moral statuses, virtue ethicists would consider the virtue of compassion for all sentient beings, and anti-realists would question whether species membership has objective moral significance.}"}
+{"problem": "Is it morally wrong to act in ways that benefit yourself if you know those same actions would benefit others more if you acted differently?", "solution": "This question examines the permissibility of self-interest and the relationship between personal and impersonal moral requirements. \\boxed{Utilitarians might argue for maximizing overall good, deontologists could recognize space for permissible self-interest, virtue ethicists would consider the virtue of self-care balanced with altruism, and anti-realists would question whether there are objective requirements to maximize good.}"}
+{"problem": "Should we hold people to higher moral standards if they have greater power or influence?", "solution": "This question explores whether moral obligations scale with capacity and whether power creates special responsibilities. \\boxed{Utilitarians might argue that greater capacity creates greater obligations to do good, deontologists could maintain that moral rules apply equally, virtue ethicists would consider the virtue of using power wisely, and anti-realists would question whether there are objective facts about special obligations.}"}
+{"problem": "Is it morally acceptable to violate someone's autonomy if doing so would significantly improve their long-term well-being?", "solution": "This question addresses paternalism, the value of autonomy, and whether people can be wrong about their own interests. \\boxed{Deontologists might argue that autonomy is inviolable, utilitarians would weigh autonomy against well-being, virtue ethicists would consider the virtue of respecting others' agency, and anti-realists would question whether autonomy has objective moral value.}"}
+{"problem": "Should we consider the intentions behind an action or only its consequences when making moral judgments?", "solution": "This question examines the relative importance of different moral factors and whether good intentions can justify bad outcomes. \\boxed{Deontologists emphasize intentions and the will, utilitarians focus on consequences, virtue ethicists consider both as part of character evaluation, and anti-realists would question whether intentions or consequences have objective moral significance.}"}
+{"problem": "Is it morally wrong to prioritize helping people in your own community over people in distant communities who are in greater need?", "solution": "This question challenges the moral significance of proximity and special relationships versus impartial concern for all. \\boxed{Utilitarians might argue for impartiality, deontologists could recognize special duties to community, virtue ethicists would consider the virtue of local engagement balanced with global concern, and anti-realists would question whether proximity has objective moral significance.}"}
+{"problem": "Should we hold people morally responsible for actions that result from character traits they did not choose to develop?", "solution": "This question explores the relationship between moral responsibility, character, and the extent of our control over who we become. \\boxed{Deontologists might focus on the capacity for moral reasoning, utilitarians would consider the consequences of holding people responsible, virtue ethicists would examine the development of character, and anti-realists would question whether moral responsibility is a real property.}"}
+{"problem": "Is it morally permissible to use violence to prevent greater violence?", "solution": "This question examines the permissibility of defensive or preventive force and the relationship between means and ends. \\boxed{Deontologists might have strict limits on the use of violence, utilitarians would weigh the consequences, virtue ethicists would consider the virtue of restraint and protection, and anti-realists would question whether there are objective facts about the permissibility of violence.}"}
+{"problem": "Should we consider the moral character of the recipient when deciding whether to help them?", "solution": "This question addresses whether moral worthiness affects our obligations to help and whether we should be partial in our assistance. \\boxed{Utilitarians might focus on maximizing good regardless of recipient character, deontologists could argue for equal treatment, virtue ethicists would consider the virtue of compassion and justice, and anti-realists would question whether character has objective moral significance.}"}
+{"problem": "Is it morally wrong to benefit from historical injustices even if you played no role in committing them?", "solution": "This question explores intergenerational justice, the persistence of historical wrongs, and whether current beneficiaries have obligations regarding past injustices. \\boxed{Utilitarians might consider the consequences of addressing historical injustices, deontologists could argue about rectificatory justice, virtue ethicists would consider the virtue of acknowledging and addressing past wrongs, and anti-realists would question whether historical injustices create objective present obligations.}"}
+{"problem": "Should we prioritize preventing harm over promoting good when we cannot do both?", "solution": "This question examines whether there is a moral asymmetry between doing harm and allowing harm, and between preventing harm and promoting good. \\boxed{Deontologists might argue for a strong duty not to harm, utilitarians would calculate net consequences, virtue ethicists would consider the virtue of non-maleficence balanced with beneficence, and anti-realists would question whether there are objective facts about the priority of preventing harm.}"}
+{"problem": "Is it morally permissible to deceive someone for their own benefit without their knowledge or consent?", "solution": ""}
+{"problem": "Should we treat actions that cause harm through negligence differently from actions that cause harm intentionally?", "solution": ""}
+{"problem": "Is it morally wrong to have children if you know they will likely suffer significantly during their lives?", "solution": ""}
+{"problem": "Should we hold corporations to the same moral standards as individuals?", "solution": ""}
+{"problem": "Is it morally acceptable to break an unjust law through civil disobedience?", "solution": ""}
+{"problem": "Should we prioritize respecting cultural traditions over universal human rights when they conflict?", "solution": ""}
+{"problem": "Is it morally wrong to remain neutral in situations of injustice?", "solution": ""}
+{"problem": "Should we consider future generations' interests as equal to those of people currently alive?", "solution": ""}
+{"problem": "Is it morally permissible to punish someone as a deterrent to others even if they don't deserve punishment?", "solution": ""}
+{"problem": "Should we hold people responsible for harm caused by omission to the same degree as harm caused by action?", "solution": ""}
+{"problem": "Is it morally acceptable to take resources from the wealthy without consent to help those in extreme poverty?", "solution": ""}
+{"problem": "Should we treat artificial intelligences as moral agents deserving of rights if they become sufficiently advanced?", "solution": ""}
+{"problem": "Is it morally wrong to make decisions for incompetent adults based on what we think is best for them?", "solution": ""}
+{"problem": "Should we allow people to sell their organs if it could save lives and they consent freely?", "solution": ""}
+{"problem": "Is it morally permissible to conduct potentially harmful research on animals if it could benefit humans significantly?", "solution": ""}
+{"problem": "Should we hold parents morally responsible for the actions of their children?", "solution": ""}
+{"problem": "Is it morally acceptable to forgive someone who has not repented or asked for forgiveness?", "solution": ""}
+{"problem": "Should we prioritize saving younger people over older people when medical resources are scarce?", "solution": ""}
+{"problem": "Is it morally wrong to create new life forms through genetic engineering?", "solution": ""}
+{"problem": "Should we hold people to their commitments even when circumstances change dramatically?", "solution": ""}
+{"problem": "Is it morally permissible to sacrifice environmental preservation for immediate human welfare?", "solution": ""}
+{"problem": "Should we treat moral disagreement as evidence against moral objectivity?", "solution": ""}
+{"problem": "Is it morally wrong to prioritize innovation and progress over stability and tradition?", "solution": ""}
+{"problem": "Should we hold democratic majorities to moral constraints that limit their power?", "solution": ""}
+{"problem": "Is it morally acceptable to use enhancement technologies to make humans more moral?", "solution": ""}
+{"problem": "Should we consider pleasure and pain in non-sentient entities when making moral decisions?", "solution": ""}
+{"problem": "Is it morally wrong to create offspring for the purpose of benefiting existing children?", "solution": ""}
+{"problem": "Should we hold people responsible for their implicit biases even if they are unaware of them?", "solution": ""}
+{"problem": "Is it morally permissible to erase someone's memories without their consent if it would spare them suffering?", "solution": ""}
+{"problem": "Should we prioritize preserving biodiversity over maximizing human flourishing when they conflict?", "solution": ""}
+{"problem": "Is it morally wrong to continue existing institutions that perpetuate inequality even if changing them causes disruption?", "solution": ""}
+{"problem": "Should we treat mistakes made in ignorance differently from mistakes made with full knowledge?", "solution": ""}
+{"problem": "Is it morally acceptable to use propaganda to promote good behavior and discourage harmful actions?", "solution": ""}
+{"problem": "Should we hold the same moral standards for private actions as for public actions?", "solution": ""}
+{"problem": "Is it morally wrong to express opinions that might influence others to act immorally?", "solution": ""}
+{"problem": "Should we prioritize individual liberty over collective welfare when they come into conflict?", "solution": ""}
+{"problem": "Is it morally permissible to create simulated conscious beings if we can ensure they have good lives?", "solution": ""}
+{"problem": "Should we hold people morally accountable for thoughts and desires they never act upon?", "solution": ""}
+{"problem": "Is it morally acceptable to maintain relationships with people who commit serious moral wrongs?", "solution": ""}
+{"problem": "Should we treat moral education as obligatory or leave it to individual choice?", "solution": ""}
+{"problem": "Is it morally wrong to refuse to make sacrifices that would significantly benefit others at minimal cost to yourself?", "solution": ""}
+{"problem": "Should we prioritize rectifying past injustices over creating new opportunities when resources are limited?", "solution": ""}
+{"problem": "Is it morally permissible to lie to someone who has no right to the truth?", "solution": ""}
+{"problem": "Should we hold different standards for evaluating actions versus character traits?", "solution": ""}
+{"problem": "Is it morally acceptable to participate in systems that exploit others if opting out provides no benefit to the exploited?", "solution": ""}
+{"problem": "Should we consider the emotional attachments of non-rational beings when making decisions that affect them?", "solution": ""}
+{"problem": "Is it morally wrong to prioritize abstract principles over concrete relationships in moral decision-making?", "solution": ""}
+{"problem": "Should we hold people responsible for failing to develop virtues they had the capacity to develop?", "solution": ""}
+{"problem": "Is it morally permissible to use deception in competitive contexts where all parties expect it?", "solution": ""}
+{"problem": "Should we treat the interests of existing people differently from the interests of people who might exist in the future?", "solution": ""}
+{"problem": "Is it morally acceptable to prioritize aesthetic values over welfare considerations in some circumstances?", "solution": ""}
+{"problem": "Should we hold individuals responsible for addressing societal problems they did not create?", "solution": ""}
+{"problem": "Is it morally wrong to make decisions that benefit the majority while harming a minority?", "solution": ""}
+{"problem": "Should we consider moral luck when evaluating the moral worth of actions and agents?", "solution": ""}
+{"problem": "Is it morally permissible to use coercion to prevent people from harming themselves?", "solution": ""}
+{"problem": "Can a doctor ethically refuse to perform a legal procedure that conflicts with their personal values?", "solution": ""}
+{"problem": "Does a journalist have an obligation to publish information that will cause public panic but is technically true?", "solution": ""}
+{"problem": "Is it acceptable for a lawyer to use legal technicalities to free someone they believe is guilty?", "solution": ""}
+{"problem": "Should engineers prioritize safety margins over cost efficiency when lives are theoretically at stake?", "solution": ""}
+{"problem": "Can a therapist break confidentiality if they believe their client might make a bad life decision?", "solution": ""}
+{"problem": "Is it wrong for teachers to express political views that might influence their students?", "solution": ""}
+{"problem": "Should social workers remove children from loving homes due to poverty alone?", "solution": ""}
+{"problem": "Can researchers ethically study populations without providing them access to the eventual benefits?", "solution": ""}
+{"problem": "Is it acceptable for police to use deceptive tactics during interrogations of suspects?", "solution": ""}
+{"problem": "Should judges consider the character of defendants separately from their specific actions?", "solution": ""}
+{"problem": "Are you obligated to remain friends with someone going through a difficult time even if the friendship has become draining?", "solution": ""}
+{"problem": "Is it wrong to cut contact with family members whose values you find abhorrent?", "solution": ""}
+{"problem": "Should you tell a friend if you think their romantic partner is wrong for them?", "solution": ""}
+{"problem": "Is it acceptable to maintain surface-level friendships primarily for professional networking?", "solution": ""}
+{"problem": "Do parents have the right to choose their children's religion or should they wait until the child can decide?", "solution": ""}
+{"problem": "Is it wrong to stay in an unfulfilling relationship because your partner depends on you emotionally?", "solution": ""}
+{"problem": "Should adult children be obligated to care for their aging parents regardless of how they were treated as children?", "solution": ""}
+{"problem": "Is it acceptable to share private information a friend told you if it might prevent them from harming themselves?", "solution": ""}
+{"problem": "Do you have an obligation to confront friends when you believe they're making moral mistakes?", "solution": ""}
+{"problem": "Should you forgive a family member who hurt you deeply if they haven't genuinely changed?", "solution": ""}
+{"problem": "Does voting for policies that benefit you financially make you complicit in systemic harm to others?", "solution": ""}
+{"problem": "Is it morally acceptable to work for an organization whose mission you find ethically questionable?", "solution": ""}
+{"problem": "Should citizens be held responsible for the historical actions of their nation's government?", "solution": ""}
+{"problem": "Is it wrong to enjoy privileges that come from your position in an unjust social hierarchy?", "solution": ""}
+{"problem": "Do institutions have moral obligations independent of the individuals who comprise them?", "solution": ""}
+{"problem": "Should we dismantle institutions that do some good if they also perpetuate harm?", "solution": ""}
+{"problem": "Is it acceptable to maintain social norms that benefit most people while marginalizing some?", "solution": ""}
+{"problem": "Can bureaucratic following of rules absolve individuals of moral responsibility for harmful outcomes?", "solution": ""}
+{"problem": "Should we judge historical figures by contemporary moral standards or by those of their time?", "solution": ""}
+{"problem": "Is it morally necessary to work toward systemic change or is focusing on individual actions sufficient?", "solution": ""}
+{"problem": "Does living an authentic life justify causing pain to others who expected you to fulfill certain roles?", "solution": ""}
+{"problem": "Is it morally valuable to pursue personal excellence even if it doesn't benefit others?", "solution": ""}
+{"problem": "Should you follow your passion if it means neglecting more stable ways to support your family?", "solution": ""}
+{"problem": "Is there moral value in experiencing suffering as part of personal growth?", "solution": ""}
+{"problem": "Do we have an obligation to find meaning in our lives or is it acceptable to simply exist?", "solution": ""}
+{"problem": "Is it wrong to maintain comforting beliefs that you suspect might not be true?", "solution": ""}
+{"problem": "Should you sacrifice your artistic vision to make your work more accessible or commercially viable?", "solution": ""}
+{"problem": "Is it morally important to leave a lasting legacy or is a well-lived private life equally valuable?", "solution": ""}
+{"problem": "Does choosing not to have experiences others consider essential constitute a moral failure?", "solution": ""}
+{"problem": "Is it acceptable to prioritize personal happiness over fulfilling expectations others have for you?", "solution": ""}
+{"problem": "Should we preserve wilderness areas even if developing them would significantly improve human welfare?", "solution": ""}
+{"problem": "Is it wrong to keep pets given that domestication fundamentally alters their natural existence?", "solution": ""}
+{"problem": "Do we have moral obligations to ecosystems themselves or only to the beings within them?", "solution": ""}
+{"problem": "Should we intervene to prevent suffering in wild animal populations or let nature take its course?", "solution": ""}
+{"problem": "Is it acceptable to eradicate invasive species to protect native ecosystems?", "solution": ""}
+{"problem": "Do plants and non-sentient organisms deserve moral consideration in environmental decisions?", "solution": ""}
+{"problem": "Should we prioritize preserving species diversity or individual animal welfare when they conflict?", "solution": ""}
+{"problem": "Is it wrong to dramatically alter landscapes through agriculture even if humans depend on it?", "solution": ""}
+{"problem": "Do we have obligations to maintain ecological processes even if they don't directly benefit any conscious being?", "solution": ""}
+{"problem": "Should we conduct geoengineering to address climate change despite unknown ecological consequences?", "solution": ""}
+{"problem": "Is it acceptable to monitor someone's online activity without their knowledge to protect them from harm?", "solution": ""}
+{"problem": "Should social media platforms be responsible for the psychological effects of their algorithms?", "solution": ""}
+{"problem": "Is it wrong to maintain multiple online personas that present different versions of yourself?", "solution": ""}
+{"problem": "Do we have a moral right to digital privacy even if giving it up could prevent crimes?", "solution": ""}
+{"problem": "Should AI systems prioritize transparency over effectiveness if understanding them reduces their performance?", "solution": ""}
+{"problem": "Is it acceptable to use data about people's behavior to manipulate their choices toward better outcomes?", "solution": ""}
+{"problem": "Do content creators have moral responsibility for how their audience interprets their work?", "solution": ""}
+{"problem": "Should we preserve the ability for people to be forgotten online or is all information public?", "solution": ""}
+{"problem": "Is it wrong to automate jobs even if the automation significantly improves productivity and safety?", "solution": ""}
+{"problem": "Do we have obligations to digital communities in the same way we have obligations to physical ones?", "solution": ""}
+{"problem": "Should inheritance rights exist or should wealth be redistributed upon death?", "solution": ""}
+{"problem": "Is it acceptable to profit from meeting basic human needs like housing and healthcare?", "solution": ""}
+{"problem": "Do workers have a right to the surplus value they create or only to agreed wages?", "solution": ""}
+{"problem": "Should people be allowed to purchase access to opportunities that others cannot afford?", "solution": ""}
+{"problem": "Is it wrong to charge different prices for the same product based on what customers can pay?", "solution": ""}
+{"problem": "Do companies have obligations to communities beyond following laws and paying taxes?", "solution": ""}
+{"problem": "Should we allow markets in everything or are some goods too important to be commodified?", "solution": ""}
+{"problem": "Is it acceptable to take a job primarily for money even if it contributes little social value?", "solution": ""}
+{"problem": "Do consumers bear moral responsibility for the labor conditions in their supply chains?", "solution": ""}
+{"problem": "Should we prevent people from making economically irrational choices for their own protection?", "solution": ""}
+{"problem": "Is it wrong to assimilate into a dominant culture while abandoning your heritage culture?", "solution": ""}
+{"problem": "Should communities be able to exclude outsiders to preserve their cultural character?", "solution": ""}
+{"problem": "Do you have special obligations to people who share your identity markers like race or nationality?", "solution": ""}
+{"problem": "Is it acceptable to appropriate elements of other cultures if you do so respectfully?", "solution": ""}
+{"problem": "Should individuals be expected to be representatives for their entire identity group?", "solution": ""}
+{"problem": "Is loyalty to your family or community more important than universal moral principles?", "solution": ""}
+{"problem": "Do traditions deserve preservation even if many community members want to change them?", "solution": ""}
+{"problem": "Should you correct people who make assumptions about you based on your identity?", "solution": ""}
+{"problem": "Is it wrong to feel more comfortable around people similar to yourself?", "solution": ""}
+{"problem": "Do members of privileged groups have different moral obligations than members of marginalized groups?", "solution": ""}
+{"problem": "Is it acceptable to remain silent when you witness misinformation spreading if speaking up seems futile?", "solution": ""}
+{"problem": "Should academics simplify their findings for public consumption even if it means losing nuance?", "solution": ""}
+{"problem": "Do you have an obligation to fact-check information before sharing it with others?", "solution": ""}
+{"problem": "Is it wrong to present arguments you don't believe in to help others think through issues?", "solution": ""}
+{"problem": "Should we value all perspectives equally in discussions or privilege expertise?", "solution": ""}
+{"problem": "Is it acceptable to withhold information that you believe people aren't ready to handle responsibly?", "solution": ""}
+{"problem": "Do we have a duty to expose our beliefs to potential refutation or can we justifiably avoid challenging viewpoints?", "solution": ""}
+{"problem": "Should teachers present controversial topics neutrally or advocate for what they believe is true?", "solution": ""}
+{"problem": "Is it wrong to use rhetorical strategies you know are manipulative if they advance truth?", "solution": ""}
+{"problem": "Do we have obligations to be intellectually charitable to views we find harmful?", "solution": ""}
+{"problem": "Should you stay in a relationship where you're no longer growing but your partner still depends on you?", "solution": ""}
+{"problem": "Is it acceptable to end a friendship because maintaining it has become emotionally exhausting?", "solution": ""}
+{"problem": "Do you have an obligation to process your trauma even if avoiding it allows you to function better?", "solution": ""}
+{"problem": "Should you suppress your authentic emotional responses if they make others uncomfortable?", "solution": ""}
+{"problem": "Is it wrong to set boundaries with family members even if it causes them emotional pain?", "solution": ""}
+{"problem": "Do service workers have an obligation to perform emotional labor beyond their job requirements?", "solution": ""}
+{"problem": "Should you tell someone an uncomfortable truth if they've asked for honest feedback?", "solution": ""}
+{"problem": "Is it acceptable to prioritize your mental health over commitments you've made to others?", "solution": ""}
+{"problem": "Do we have obligations to help others process their emotions or only to avoid causing harm?", "solution": ""}
+{"problem": "Should you maintain hope in dire circumstances even if realistic assessment suggests hopelessness?", "solution": ""}
+{"problem": "Does an elderly person have the right to refuse life-extending treatment even against family wishes?", "solution": ""}
+{"problem": "Are parents morally obligated to preserve childhood innocence or prepare children for harsh realities?", "solution": ""}
+{"problem": "Should society invest heavily in life extension technology when basic needs remain unmet globally?", "solution": ""}
+{"problem": "Is it ethical to have children knowing they will inevitably experience suffering and death?", "solution": ""}
+{"problem": "Do teenagers deserve full bodily autonomy or should parents maintain veto power over medical decisions?", "solution": ""}
+{"problem": "Should terminally ill patients have access to physician-assisted death regardless of prognosis timeline?", "solution": ""}
+{"problem": "Is it wrong to mourn differently than social conventions expect?", "solution": ""}
+{"problem": "Does someone who knows they will develop dementia have the right to set binding directives for their future demented self?", "solution": ""}
+{"problem": "Should we prioritize quality of remaining life over quantity when making medical decisions for others?", "solution": ""}
+{"problem": "Is cryogenic preservation after death a reasonable hope or a harmful delusion?", "solution": ""}
+{"problem": "Can artwork depicting immoral acts be morally praiseworthy if technically excellent?", "solution": ""}
+{"problem": "Should governments censor art that might incite violence or hatred?", "solution": ""}
+{"problem": "Does an artist have responsibility for how their work is interpreted and used by others?", "solution": ""}
+{"problem": "Is it acceptable to separate artistic merit from the moral character of the creator?", "solution": ""}
+{"problem": "Should historical artworks containing outdated offensive stereotypes remain publicly displayed?", "solution": ""}
+{"problem": "Does comedy have special ethical latitude to address taboo subjects?", "solution": ""}
+{"problem": "Is cultural appropriation in art always wrong or does it depend on execution and intent?", "solution": ""}
+{"problem": "Should provocative art be restricted from public spaces to avoid causing distress?", "solution": ""}
+{"problem": "Does preserving aesthetic heritage justify maintaining monuments to immoral historical figures?", "solution": ""}
+{"problem": "Is it ethical to profit substantially from art depicting others' suffering?", "solution": ""}
+{"problem": "Should performance-enhancing drugs be permitted if all competitors have equal access?", "solution": ""}
+{"problem": "Is it wrong to strategically injure an opponent within the rules to gain competitive advantage?", "solution": ""}
+{"problem": "Do elite athletes have obligations beyond following the rules to model good sportsmanship?", "solution": ""}
+{"problem": "Should we eliminate genetic advantages in sports through classification systems?", "solution": ""}
+{"problem": "Is it acceptable to bend rules when officials won't notice and everyone else does it?", "solution": ""}
+{"problem": "Do coaches have the right to push young athletes to injury risk for team success?", "solution": ""}
+{"problem": "Should competitions be segregated by biological sex or by performance characteristics?", "solution": ""}
+{"problem": "Is tanking games to improve draft position or playoff seeding morally acceptable strategy?", "solution": ""}
+{"problem": "Do fans have the right to verbally abuse opposing players as part of home-field advantage?", "solution": ""}
+{"problem": "Should resource-intensive Olympic sports continue when funds could address social needs?", "solution": ""}
+{"problem": "Can a doctor ethically refuse to perform a legal procedure they find morally objectionable?", "solution": ""}
+{"problem": "Should parents have the right to refuse vaccinations for their children?", "solution": ""}
+{"problem": "Is cosmetic surgery frivolous or a legitimate exercise of bodily autonomy?", "solution": ""}
+{"problem": "Do people have the right to sell their organs or does this exploit the desperate?", "solution": ""}
+{"problem": "Should gender-affirming care be available to minors or only adults?", "solution": ""}
+{"problem": "Is forced psychiatric treatment ever justified for someone refusing care?", "solution": ""}
+{"problem": "Do surrogate mothers have any moral claim to children they carry but aren't genetically related to?", "solution": ""}
+{"problem": "Should people be allowed to use genetic screening to select embryos for desired traits?", "solution": ""}
+{"problem": "Is it ethical to continue pregnancy after severe fetal abnormalities are detected?", "solution": ""}
+{"problem": "Do patients have the right to demand treatments doctors consider futile or harmful?", "solution": ""}
+{"problem": "Should healthcare be rationed by age when resources are scarce?", "solution": ""}
+{"problem": "Is body modification for aesthetic reasons different ethically from medical transition?", "solution": ""}
+{"problem": "Do parents have the right to circumcise infants for religious or cultural reasons?", "solution": ""}
+{"problem": "Should people be allowed to amputate healthy limbs if they sincerely desire it?", "solution": ""}
+{"problem": "Is it wrong to have children through IVF when many adoptable children lack homes?", "solution": ""}
+{"problem": "Can preemptive military strikes against developing threats ever be morally justified?", "solution": ""}
+{"problem": "Is absolute pacifism tenable when it enables atrocities you could have prevented?", "solution": ""}
+{"problem": "Do soldiers bear moral responsibility for unjust wars they're ordered to fight?", "solution": ""}
+{"problem": "Should nations maintain nuclear arsenals as deterrents or work toward total disarmament?", "solution": ""}
+{"problem": "Is targeted assassination of enemy leaders more or less ethical than conventional warfare?", "solution": ""}
+{"problem": "Do civilians lose protected status when they support military efforts?", "solution": ""}
+{"problem": "Should humanitarian intervention override national sovereignty to prevent atrocities?", "solution": ""}
+{"problem": "Is violent resistance against oppressive governments morally justified?", "solution": ""}
+{"problem": "Do victorious nations have the right to impose regime change and restructure defeated societies?", "solution": ""}
+{"problem": "Should we accept higher risks to protect civilian populations during military operations?", "solution": ""}
+{"problem": "Is terrorism ever justified when conventional resistance is impossible?", "solution": ""}
+{"problem": "Do child soldiers bear moral responsibility for atrocities committed under coercion?", "solution": ""}
+{"problem": "Should wealthy nations accept military casualties to protect populations in poorer nations?", "solution": ""}
+{"problem": "Is torture acceptable in extreme scenarios to extract information that might save lives?", "solution": ""}
+{"problem": "Do we have obligations to refugees created by conflicts our nation participated in?", "solution": ""}
+{"problem": "Should parents control their adult children's inheritance or let them make their own mistakes?", "solution": ""}
+{"problem": "Is it wrong to continue working in retirement when younger workers need jobs?", "solution": ""}
+{"problem": "Do grandparents have rights to access grandchildren against parents' wishes?", "solution": ""}
+{"problem": "Should we tell children they're adopted or let them believe biological parents are real parents?", "solution": ""}
+{"problem": "Is it ethical to use life insurance payouts for purposes other than supporting dependents?", "solution": ""}
+{"problem": "Do middle-aged children have obligations to delay their life plans to care for aging parents?", "solution": ""}
+{"problem": "Should pregnant people be able to engage in risky activities that might harm the fetus?", "solution": ""}
+{"problem": "Is it wrong to have a favorite child even if you don't treat them differently?", "solution": ""}
+{"problem": "Should teenagers be tried as adults for serious crimes?", "solution": ""}
+{"problem": "Do unborn future generations have moral claims on our current resource use?", "solution": ""}
+{"problem": "Is it acceptable to display grotesque or disturbing art in public spaces?", "solution": ""}
+{"problem": "Should museums return cultural artifacts to countries of origin or preserve them in institutions?", "solution": ""}
+{"problem": "Do whistleblowers in art forgery cases betray legitimate confidentiality or serve justice?", "solution": ""}
+{"problem": "Is street art vandalism or legitimate public expression?", "solution": ""}
+{"problem": "Should AI-generated art be eligible for the same recognition as human-created art?", "solution": ""}
+{"problem": "Does an athlete's political activism during competition distract from sports or serve important purposes?", "solution": ""}
+{"problem": "Is intentional fouling at the end of close games against the spirit of competition?", "solution": ""}
+{"problem": "Should parents push talented children into elite sports programs despite personal costs?", "solution": ""}
+{"problem": "Do professional athletes owe loyalty to teams that invested in their development?", "solution": ""}
+{"problem": "Is it ethical to celebrate injuries to opposing players if it helps your team?", "solution": ""}
+{"problem": "Should experimental medical treatments be available to terminally ill patients before full approval?", "solution": ""}
+{"problem": "Do people have the right to choose death over life-saving amputation?", "solution": ""}
+{"problem": "Is it wrong for doctors to have romantic relationships with former patients?", "solution": ""}
+{"problem": "Should parents be allowed to raise children with significant preventable health risks for religious reasons?", "solution": ""}
+{"problem": "Do people choosing dangerous recreational activities have the same claim to medical resources?", "solution": ""}
+{"problem": "Is collateral civilian damage acceptable if military targets are of sufficient importance?", "solution": ""}
+{"problem": "Should soldiers follow illegal orders from legitimate superiors or refuse and face consequences?", "solution": ""}
+{"problem": "Do veterans deserve special social privileges beyond compensation for service-related disabilities?", "solution": ""}
+{"problem": "Is economic sanctions that harm civilian populations a legitimate alternative to military force?", "solution": ""}
+{"problem": "Should nations refuse to negotiate with hostage-takers even when lives are immediately at stake?", "solution": ""}
+{"problem": "Do we have stronger obligations to elderly parents who were good parents versus those who were neglectful?", "solution": ""}
+{"problem": "Is it ethical to have children primarily to provide companionship or purpose in your own life?", "solution": ""}
+{"problem": "Should young adults sacrifice career opportunities to stay near aging parents?", "solution": ""}
+{"problem": "Do people have the right to exclude specific family members from deathbed visits?", "solution": ""}
+{"problem": "Is it wrong to feel relief when a suffering loved one finally dies?", "solution": ""}
+{"problem": "Should controversial music be removed from streaming platforms or contextualized with warnings?", "solution": ""}
+{"problem": "Does satire that punches down at vulnerable groups deserve protection as free expression?", "solution": ""}
+{"problem": "Is it ethical to restore damaged historical artworks or preserve them in their deteriorated state?", "solution": ""}
+{"problem": "Should performance art that risks the artist's wellbeing be allowed?", "solution": ""}
+{"problem": "Do documentary filmmakers have obligations to protect subjects from harmful exposure?", "solution": ""}
+{"problem": "Is doping in recreational amateur sports a victimless shortcut or corrupting influence?", "solution": ""}
+{"problem": "Should professional teams be able to relocate cities despite fan loyalty and community investment?", "solution": ""}
+{"problem": "Do athletes have obligations to continue playing through minor injuries for team benefit?", "solution": ""}
+{"problem": "Is it wrong to root against someone's recovery if their return disadvantages your interests?", "solution": ""}
+{"problem": "Should youth sports emphasize winning and elite development or universal participation and fun?", "solution": ""}
+{"problem": "Do people have the right to refuse blood transfusions for themselves even when easily survivable?", "solution": ""}
+{"problem": "Is it ethical to use placebos in treatment when patients believe they're receiving real medicine?", "solution": ""}
+{"problem": "Should doctors disclose their own values when patients ask for guidance on value-laden decisions?", "solution": ""}
+{"problem": "Do people undergoing gender transition have obligations to inform romantic partners about their history?", "solution": ""}
+{"problem": "Is it wrong to choose a less-qualified surgeon because you're more comfortable with their demographics?", "solution": ""}
+{"problem": "Should military force be used to enforce international humanitarian law against non-compliant nations?", "solution": ""}
+{"problem": "Do combatants have the right to refuse orders that are legal but tactically suicidal?", "solution": ""}
+{"problem": "Is developing autonomous weapons systems that remove humans from kill decisions ethical?", "solution": ""}
+{"problem": "Should nations maintain the capability for devastating retaliation they would never actually use?", "solution": ""}
+{"problem": "Do journalists embedded with military units have obligations to national security that override reporting truth?", "solution": ""}
+{"problem": "Can you know something without being able to prove it?", "solution": ""}
+{"problem": "If a tree falls in a forest and no one hears it, does it make a sound?", "solution": ""}
+{"problem": "Is it possible to be certain about anything at all?", "solution": ""}
+{"problem": "Do we have better reasons to trust scientific knowledge than religious revelation?", "solution": ""}
+{"problem": "Can you believe something you know to be false?", "solution": ""}
+{"problem": "Is knowledge just true belief plus something else, or is this analysis flawed?", "solution": ""}
+{"problem": "Do eyewitness testimonies count as knowledge if they're statistically unreliable?", "solution": ""}
+{"problem": "Can machines know things or only process information without understanding?", "solution": ""}
+{"problem": "Is skepticism about the external world rationally defensible or pragmatically absurd?", "solution": ""}
+{"problem": "Do we have direct access to truth or only interpretations filtered through cognition?", "solution": ""}
+{"problem": "Can intuition be a legitimate source of knowledge alongside reason and experience?", "solution": ""}
+{"problem": "Is historical knowledge less reliable than scientific knowledge due to non-repeatability?", "solution": ""}
+{"problem": "Do conspiracy theories deserve epistemic respect if they're logically consistent?", "solution": ""}
+{"problem": "Can you know what it's like to be someone else or are you limited to analogy?", "solution": ""}
+{"problem": "Is mathematical knowledge discovered or invented by human minds?", "solution": ""}
+{"problem": "Does the universe exist independently of observers or is reality observer-dependent?", "solution": ""}
+{"problem": "Can something come from nothing or must existence have always existed?", "solution": ""}
+{"problem": "Is time an objective feature of reality or a subjective experience of conscious beings?", "solution": ""}
+{"problem": "Do abstract objects like numbers exist in the same way physical objects do?", "solution": ""}
+{"problem": "If you replace every part of a ship gradually, is it still the same ship?", "solution": ""}
+{"problem": "Is there a difference between the way things appear and the way they really are?", "solution": ""}
+{"problem": "Can two things be identical if they differ in any property whatsoever?", "solution": ""}
+{"problem": "Does the future already exist or is only the present real?", "solution": ""}
+{"problem": "Are there necessary truths that couldn't have been otherwise or is everything contingent?", "solution": ""}
+{"problem": "Can causes operate backwards in time or must effects always follow causes?", "solution": ""}
+{"problem": "Is empty space something or nothing?", "solution": ""}
+{"problem": "Do possibilities exist in some sense or only actualities?", "solution": ""}
+{"problem": "Can something be true in one framework but false in another with equal validity?", "solution": ""}
+{"problem": "Is there a fundamental substance underlying all reality or is reality plural?", "solution": ""}
+{"problem": "Does everything that exists have a reason for its existence or do some things just happen?", "solution": ""}
+{"problem": "Is consciousness just physical brain processes or something irreducibly mental?", "solution": ""}
+{"problem": "Could a perfect physical duplicate of you lack consciousness while behaving identically?", "solution": ""}
+{"problem": "Do you remain the same person throughout your life or are you a sequence of different selves?", "solution": ""}
+{"problem": "Is free will compatible with determinism or does freedom require indeterminism?", "solution": ""}
+{"problem": "Can you be held responsible for actions if your choices are determined by prior causes?", "solution": ""}
+{"problem": "What makes you the same person you were as a child if all your cells have been replaced?", "solution": ""}
+{"problem": "Could artificial intelligence become genuinely conscious or only simulate consciousness?", "solution": ""}
+{"problem": "Is there something it's like to be a bat or are non-human experiences fundamentally unknowable?", "solution": ""}
+{"problem": "Do mental states cause physical events or are they merely correlated with brain states?", "solution": ""}
+{"problem": "Could you survive as a brain in a vat having all experiences artificially induced?", "solution": ""}
+{"problem": "Is consciousness an emergent property of complex systems or fundamental to reality?", "solution": ""}
+{"problem": "Can you be mistaken about your own mental states or do you have privileged access?", "solution": ""}
+{"problem": "If your brain were scanned and reconstructed digitally, would the upload be you?", "solution": ""}
+{"problem": "Do animals have consciousness similar to humans or fundamentally different experiences?", "solution": ""}
+{"problem": "Is the mind located in the brain or is it a property of the whole organism?", "solution": ""}
+{"problem": "Can a statement be neither true nor false or must every proposition have a truth value?", "solution": ""}
+{"problem": "If this statement is false, is it true or false?", "solution": ""}
+{"problem": "Does logical reasoning discover objective truths or impose human structure on reality?", "solution": ""}
+{"problem": "Can something be both A and not-A simultaneously in different respects?", "solution": ""}
+{"problem": "Is inductive reasoning rationally justified or do we just assume the future resembles the past?", "solution": ""}
+{"problem": "Do the laws of logic apply to all possible worlds or only our universe?", "solution": ""}
+{"problem": "If a barber shaves all and only those who don't shave themselves, does he shave himself?", "solution": ""}
+{"problem": "Can there be true contradictions or does truth require consistency?", "solution": ""}
+{"problem": "Is deductive reasoning purely formal or does content affect validity?", "solution": ""}
+{"problem": "Do the limits of language constitute the limits of thought?", "solution": ""}
+{"problem": "Can infinite regresses be actual or must every chain of reasons terminate?", "solution": ""}
+{"problem": "Is classical logic the correct logic or are there legitimate alternative logics?", "solution": ""}
+{"problem": "Does every question have an answer or are some questions meaningless?", "solution": ""}
+{"problem": "Can paradoxes reveal truths about reality or are they merely linguistic confusions?", "solution": ""}
+{"problem": "Is probability objective in nature or subjective in our knowledge?", "solution": ""}
+{"problem": "Does science discover objective truth or just produce useful models?", "solution": ""}
+{"problem": "Should we prefer simpler theories to complex ones if both fit the data equally?", "solution": ""}
+{"problem": "Can scientific theories be proven true or only falsified?", "solution": ""}
+{"problem": "Do unobservable entities like electrons really exist or are they convenient fictions?", "solution": ""}
+{"problem": "Is the scientific method the only reliable path to knowledge about the world?", "solution": ""}
+{"problem": "Should we believe the theory that explains the most phenomena or the one most likely to be true?", "solution": ""}
+{"problem": "Do scientific revolutions represent progress toward truth or just paradigm shifts?", "solution": ""}
+{"problem": "Can the mind studying nature be objective or is all observation theory-laden?", "solution": ""}
+{"problem": "Is reductionism correct that higher-level phenomena are nothing but lower-level processes?", "solution": ""}
+{"problem": "Do scientific laws govern nature or merely describe regularities we observe?", "solution": ""}
+{"problem": "Should we accept scientific consensus even when we can't verify it ourselves?", "solution": ""}
+{"problem": "Is there a clear line separating science from pseudoscience?", "solution": ""}
+{"problem": "Do probabilities in quantum mechanics reflect reality or just our ignorance?", "solution": ""}
+{"problem": "Can social sciences achieve the same objectivity as natural sciences?", "solution": ""}
+{"problem": "Is scientific progress linear and cumulative or revolutionary and discontinuous?", "solution": ""}
+{"problem": "Do words have fixed meanings or does context always determine interpretation?", "solution": ""}
+{"problem": "Can private sensations be named in public language?", "solution": ""}
+{"problem": "Is the meaning of a name determined by description or direct reference?", "solution": ""}
+{"problem": "Does language shape thought or merely express pre-linguistic concepts?", "solution": ""}
+{"problem": "Can artificial languages be more logically perfect than natural languages?", "solution": ""}
+{"problem": "Is translation between radically different languages truly possible?", "solution": ""}
+{"problem": "Do statements correspond to facts in reality or cohere within belief systems?", "solution": ""}
+{"problem": "Can metaphors convey truths that literal language cannot express?", "solution": ""}
+{"problem": "Is meaning in the head, in the world, or in social practices?", "solution": ""}
+{"problem": "Do different languages encode different conceptual schemes or a universal grammar?", "solution": ""}
+{"problem": "Can names refer to non-existent things or does reference require existence?", "solution": ""}
+{"problem": "Is vagueness a defect of language or a feature reflecting reality's indeterminacy?", "solution": ""}
+{"problem": "Do sentences have meanings independently of speakers' intentions?", "solution": ""}
+{"problem": "Can animals have language or only communication systems?", "solution": ""}
+{"problem": "Is understanding a sentence just knowing its truth conditions?", "solution": ""}
+{"problem": "Does political authority require consent of the governed or can it be imposed?", "solution": ""}
+{"problem": "Is democracy the least bad system or intrinsically valuable?", "solution": ""}
+{"problem": "Should individual liberty be maximized or balanced against collective welfare?", "solution": ""}
+{"problem": "Do we have obligations to obey unjust laws in otherwise just societies?", "solution": ""}
+{"problem": "Is justice primarily about equal distribution or about deserved outcomes?", "solution": ""}
+{"problem": "Should property rights be absolute or limited by social needs?", "solution": ""}
+{"problem": "Do future generations have rights that constrain our present actions?", "solution": ""}
+{"problem": "Is revolution justified when legal reform is possible but slow?", "solution": ""}
+{"problem": "Should society be organized to benefit the worst-off or to maximize total welfare?", "solution": ""}
+{"problem": "Do groups have rights distinct from the rights of their members?", "solution": ""}
+{"problem": "Is political neutrality achievable or is all policy value-laden?", "solution": ""}
+{"problem": "Should borders be open to free movement or can nations legitimately exclude?", "solution": ""}
+{"problem": "Do citizens have obligations beyond obeying laws and paying taxes?", "solution": ""}
+{"problem": "Is tolerance a virtue requiring us to tolerate the intolerant?", "solution": ""}
+{"problem": "Should democracy make all decisions by majority or protect minority rights?", "solution": ""}
+{"problem": "If we're living in a computer simulation, does that change anything important?", "solution": ""}
+{"problem": "Will advanced AI deserve moral consideration as persons or remain sophisticated tools?", "solution": ""}
+{"problem": "Should humans enhance their biology through technology or preserve natural humanity?", "solution": ""}
+{"problem": "Do digital copies of people have the same rights as biological originals?", "solution": ""}
+{"problem": "Is technological progress inevitable or can societies choose to limit it?", "solution": ""}
+{"problem": "Would immortality through technology be desirable or undermine meaning?", "solution": ""}
+{"problem": "Should we develop superintelligent AI even if we can't predict its values?", "solution": ""}
+{"problem": "Do social media algorithms shape preferences or merely reveal them?", "solution": ""}
+{"problem": "Is a life lived in perfect virtual reality worse than a difficult real life?", "solution": ""}
+{"problem": "Should genetic engineering be used to eliminate disability or is this problematic?", "solution": ""}
+{"problem": "Do we have obligations to potential AI consciousness we might create?", "solution": ""}
+{"problem": "Is automation that eliminates human labor liberating or dehumanizing?", "solution": ""}
+{"problem": "Should we upload minds to escape mortality or accept death as essential?", "solution": ""}
+{"problem": "Do enhanced humans have unfair advantages or is inequality through technology acceptable?", "solution": ""}
+{"problem": "Is privacy a fundamental right or a historical accident of limited technology?", "solution": ""}
+{"problem": "Does life have inherent meaning or must we create meaning for ourselves?", "solution": ""}
+{"problem": "Is suicide in the face of absurdity rational or does life demand affirmation?", "solution": ""}
+{"problem": "Should you live authentically according to your nature or conform to social expectations?", "solution": ""}
+{"problem": "Is anxiety about death irrational since you won't experience being dead?", "solution": ""}
+{"problem": "Does awareness of mortality give life meaning or merely cause suffering?", "solution": ""}
+{"problem": "Should you commit to projects even knowing they're ultimately futile?", "solution": ""}
+{"problem": "Is freedom a blessing enabling authentic existence or a burden causing anguish?", "solution": ""}
+{"problem": "Do you create your essence through choices or discover a pre-existing nature?", "solution": ""}
+{"problem": "Should you embrace the absurdity of existence or seek transcendent meaning?", "solution": ""}
+{"problem": "Is bad faith self-deception about freedom always avoidable or sometimes necessary?", "solution": ""}
+{"problem": "Does radical freedom make you fully responsible for who you become?", "solution": ""}
+{"problem": "Is death the possibility that gives life urgency or just an evil to overcome?", "solution": ""}
+{"problem": "Should you live as if your actions define universal law or pursue individual flourishing?", "solution": ""}
+{"problem": "Is despair at meaninglessness a philosophical insight or clinical depression?", "solution": ""}
+{"problem": "Does facing your mortality honestly require rejecting comforting illusions?", "solution": ""}
+{"problem": "In the trolley problem, is it worse to act to kill one or fail to act letting five die?", "solution": ""}
+{"problem": "If you could experience perfect happiness in an experience machine, should you plug in?", "solution": ""}
+{"problem": "Would killing one person to harvest organs for five dying patients be justified?", "solution": ""}
+{"problem": "If teleportation destroys and recreates you, does the person arriving at the destination have your identity?", "solution": ""}
+{"problem": "Should you save your drowning child or five strangers if you can only save one group?", "solution": ""}
+{"problem": "If brain transplantation were possible, would you go with your brain or your body?", "solution": ""}
+{"problem": "Is it rational to prefer pain on Tuesday to slightly more pain on Wednesday?", "solution": ""}
+{"problem": "Would you push a large person onto the tracks to stop a trolley from killing five?", "solution": ""}
+{"problem": "If you could take a pill to eliminate all your current desires and replace them, should you?", "solution": ""}
+{"problem": "Is a life of satisfied simple pleasures better than dissatisfied philosophical reflection?", "solution": ""}
+{"problem": "Would perfect knowledge of your future make life better or eliminate freedom?", "solution": ""}
+{"problem": "If you could redistribute your memories to feel they belong to someone else, would you lose identity?", "solution": ""}
+{"problem": "Should you give equal weight to the preferences of all people or prioritize those you love?", "solution": ""}
+{"problem": "Would ceasing to exist be worse than experiencing eternal torment?", "solution": ""}
+{"problem": "If a perfect copy of you were created, would killing the original be murder or just unusual?", "solution": ""}

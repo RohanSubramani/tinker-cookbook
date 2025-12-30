@@ -226,7 +226,7 @@ class WandbLogger(Logger):
             dir=str(log_dir) if log_dir else None,
             name=wandb_name,
             entity=wandb_entity,
-            reinit=True,  # Allow reinitialization for parallel runs
+            reinit="return_previous",  # Allow reinitialization for parallel runs
         )
 
     def log_hparams(self, config: Any) -> None:
