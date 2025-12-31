@@ -449,10 +449,56 @@ async def train_on_batch(
 
 
 def log_batch_metrics(ml_logger: Any, batch_details: list[dict], step: int):
-    """Log metrics for a batch."""
-    if batch_details:
-        avg_score = sum(d["score"] for d in batch_details) / len(batch_details)
-        ml_logger.log_metrics({"train/avg_score": avg_score, "train/groups": step}, step=step)
+    """Log metrics for a batch, separating with/without advice and averaging over all rollouts."""
+    if not batch_details:
+        return
+    
+    # Separate details by whether they used advice
+    with_advice_details = []
+    without_advice_details = []
+    
+    for d in batch_details:
+        # Check if advice was used: iteration == 1 or advice field is not None
+        has_advice = d.get("iteration", 0) == 1 or d.get("advice") is not None
+        if has_advice:
+            with_advice_details.append(d)
+        else:
+            without_advice_details.append(d)
+    
+    # Calculate averages over all rollouts (not just first one)
+    metrics = {"train/groups": step}
+    
+    if with_advice_details:
+        # Average over all rollouts for questions with advice
+        all_scores_with_advice = []
+        for d in with_advice_details:
+            scores = d.get("scores_in_group", [d.get("score", 0.0)])
+            all_scores_with_advice.extend(scores)
+        if all_scores_with_advice:
+            avg_with_advice = sum(all_scores_with_advice) / len(all_scores_with_advice)
+            metrics["train/avg_score_with_advice"] = avg_with_advice
+            metrics["train/num_questions_with_advice"] = len(with_advice_details)
+    
+    if without_advice_details:
+        # Average over all rollouts for questions without advice
+        all_scores_without_advice = []
+        for d in without_advice_details:
+            scores = d.get("scores_in_group", [d.get("score", 0.0)])
+            all_scores_without_advice.extend(scores)
+        if all_scores_without_advice:
+            avg_without_advice = sum(all_scores_without_advice) / len(all_scores_without_advice)
+            metrics["train/avg_score_without_advice"] = avg_without_advice
+            metrics["train/num_questions_without_advice"] = len(without_advice_details)
+    
+    # Overall average (for backward compatibility)
+    all_scores = []
+    for d in batch_details:
+        scores = d.get("scores_in_group", [d.get("score", 0.0)])
+        all_scores.extend(scores)
+    if all_scores:
+        metrics["train/avg_score"] = sum(all_scores) / len(all_scores)
+    
+    ml_logger.log_metrics(metrics, step=step)
 
 
 def write_recontextualization_example(
@@ -902,7 +948,10 @@ async def run_phase1_training(
     groups_trained = 0
     next_question_idx = 0
     
-    print(f"\n{'='*80}\nPhase 1: Processing all questions without advice\n{'='*80}\n")
+    print(f"\n{'='*80}")
+    print(f"Phase 1: Processing all questions without advice")
+    print(f"Expected groups: 0 → {num_train_questions} ({num_train_questions}/{total_train_groups} total)")
+    print(f"{'='*80}\n")
     while next_question_idx < num_train_questions and groups_trained < total_train_groups:
         batch_question_indices = [
             next_question_idx + i for i in range(batch_size)
@@ -934,6 +983,10 @@ async def run_phase1_training(
         
         log_batch_metrics(ml_logger, batch_details, groups_trained + batch_groups)
         groups_trained += batch_groups
+        
+        # Log progress
+        progress_pct = (groups_trained / total_train_groups) * 100
+        print(f"\n📈 Progress: {groups_trained}/{total_train_groups} groups ({progress_pct:.1f}% complete)\n")
         
         await maybe_save_checkpoint(
             training_client, groups_trained, log_path, total_train_groups, num_saves_excluding_final
@@ -983,15 +1036,25 @@ async def run_phase2_training(
         if q_idx in question_states and question_states[q_idx].get("advice") is not None
     ]
     
-    print(f"\n{'='*80}\nPhase 2: Training with advice for {num_epochs_with_advice} epochs\n")
-    print(f"Questions with advice: {len(questions_with_advice)}/{num_train_questions}\n{'='*80}\n")
+    expected_phase2_start = groups_trained
+    expected_phase2_end = total_train_groups
+    print(f"\n{'='*80}")
+    print(f"Phase 2: Training with advice for {num_epochs_with_advice} epochs")
+    print(f"Questions with advice: {len(questions_with_advice)}/{num_train_questions}")
+    print(f"Expected groups: {expected_phase2_start} → {expected_phase2_end} ({expected_phase2_end - expected_phase2_start}/{total_train_groups} total)")
+    print(f"{'='*80}\n")
     
     # Run multiple epochs with advice
     for epoch in range(num_epochs_with_advice):
         if groups_trained >= total_train_groups:
             break
-            
-        print(f"\n{'─'*80}\nEpoch {epoch + 1}/{num_epochs_with_advice} (with advice)\n{'─'*80}\n")
+        
+        epoch_start_groups = groups_trained
+        expected_epoch_groups = min(num_train_questions, total_train_groups - groups_trained)
+        print(f"\n{'─'*80}")
+        print(f"Epoch {epoch + 1}/{num_epochs_with_advice} (with advice)")
+        print(f"Starting at group {epoch_start_groups}, expecting ~{expected_epoch_groups} groups this epoch")
+        print(f"{'─'*80}\n")
         
         # Process all questions in batches
         for batch_start in range(0, num_train_questions, batch_size):
@@ -1046,6 +1109,10 @@ async def run_phase2_training(
             
             log_batch_metrics(ml_logger, batch_details, groups_trained + batch_groups)
             groups_trained += batch_groups
+            
+            # Log progress
+            progress_pct = (groups_trained / total_train_groups) * 100
+            print(f"\n📈 Progress: {groups_trained}/{total_train_groups} groups ({progress_pct:.1f}% complete)\n")
             
             await maybe_save_checkpoint(
                 training_client, groups_trained, log_path, total_train_groups, num_saves_excluding_final

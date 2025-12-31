@@ -1,4 +1,12 @@
-"""Iterative advised RL training script - config at top, easy to edit."""
+"""Iterative advised RL training script - config at top, easy to edit.
+
+IMPORTANT: Keep this file minimal! All helper functions should be in
+iterative_advised_learning/training_helpers.py. See training_helpers.py for:
+- setup_clients_and_dataset, load_and_split_data
+- run_phase1_training, run_phase2_training
+- run_quick_test_eval, run_test_evaluation
+- finalize_training, find_log_path, load_eval_checkpoint
+"""
 
 import asyncio
 import os
@@ -13,6 +21,7 @@ from iterative_advised_learning.training_helpers import (
     load_eval_checkpoint,
     run_phase1_training,
     run_phase2_training,
+    run_quick_test_eval,
     run_test_evaluation,
     setup_clients_and_dataset,
 )
@@ -28,12 +37,13 @@ NUM_TRAIN_QUESTIONS = 400  # Number of questions to train on
 NUM_TEST_QUESTIONS = 40  # Number of questions for test set
 NUM_EPOCHS_WITH_ADVICE = 5  # Number of epochs to train with advice (after initial epoch without)
 # Total groups = 1 epoch without advice + NUM_EPOCHS_WITH_ADVICE epochs with advice
-# = (1 + 5) * 15 = 90 groups
 TOTAL_TRAIN_GROUPS = (1 + NUM_EPOCHS_WITH_ADVICE) * NUM_TRAIN_QUESTIONS
-GROUP_SIZE = 16  # Rollouts per problem
-BATCH_SIZE = 20  # Problems per batch
+GROUP_SIZE = 8  # Rollouts per problem
+BATCH_SIZE = 10  # Problems per batch
 
-LEARNING_RATE = 1e-3
+TOTAL_ROLLOUTS = TOTAL_TRAIN_GROUPS * GROUP_SIZE
+
+LEARNING_RATE = 1e-4
 MAX_TOKENS = 2048
 TEMPERATURE = 1.0
 LORA_RANK = 32
@@ -91,6 +101,41 @@ async def run_advised_training():
     
     if RUN_TRAIN:
         question_states = {}
+        
+        # Print training plan
+        print(f"\n{'🎯 '*40}")
+        print(f"TRAINING PLAN")
+        print(f"{'─'*80}")
+        print(f"  Training Questions: {NUM_TRAIN_QUESTIONS}")
+        print(f"  Test Questions: {NUM_TEST_QUESTIONS}")
+        print(f"  Group Size: {GROUP_SIZE} rollouts/question")
+        print(f"  Batch Size: {BATCH_SIZE} questions/batch")
+        print(f"  Total Groups: {TOTAL_TRAIN_GROUPS}")
+        print(f"  Total Rollouts: {TOTAL_ROLLOUTS}")
+        print(f"  Learning Rate: {LEARNING_RATE}")
+        print(f"{'─'*80}")
+        print(f"  Phase 1: {NUM_TRAIN_QUESTIONS} groups (no advice)")
+        print(f"  Phase 2: {TOTAL_TRAIN_GROUPS - NUM_TRAIN_QUESTIONS} groups ({NUM_EPOCHS_WITH_ADVICE} epochs with advice)")
+        print(f"{'─'*80}")
+        print(f"  Checkpoints: {EQUALLY_SPACED_SAVES_EXCLUDING_FINAL} intermediate + 1 final")
+        print(f"  Evaluations: {EQUALLY_SPACED_EVALS_EXCLUDING_FINAL} intermediate + 1 final")
+        print(f"{'🎯 '*40}\n")
+        
+        # Initial baseline evaluation before training
+        print(f"\n{'='*80}")
+        print(f"BASELINE EVALUATION (before training)")
+        print(f"{'='*80}\n")
+        initial_sampling_client = await training_client.save_weights_and_get_sampling_client_async()
+        await run_quick_test_eval(
+            test_questions=test_questions,
+            sampling_client=initial_sampling_client,
+            renderer=renderer,
+            grader=train_dataset.grader,
+            ml_logger=ml_logger,
+            groups_trained=0,
+            max_tokens=MAX_TOKENS,
+            temperature=TEMPERATURE,
+        )
         
         # Phase 1: Process all questions without advice
         groups_trained, policy, details = await run_phase1_training(

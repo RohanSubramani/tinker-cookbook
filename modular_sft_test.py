@@ -1,4 +1,10 @@
-"""Modular SFT training script - set training configs at the top."""
+"""Modular SFT training script - set training configs at the top.
+
+IMPORTANT: Keep this file minimal! All helper functions and dataset builders
+should be in training_utils.py. See training_utils.py for:
+- LimitedConversationFileBuilder
+- ModelComparisonEvaluator, run_model_comparison
+"""
 
 import asyncio
 import os
